@@ -19,3 +19,10 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+
+Route::get('/vue/{vue_capture?}', function () {
+    return view('vue.index');
+})->where('vue_capture', '[\/\w\.-]*');
+
+
